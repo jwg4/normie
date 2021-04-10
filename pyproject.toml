@@ -4,14 +4,19 @@ version = "0.2.0-alpha.0"
 description = "Accurate and efficient normal distribution statistics."
 authors = ["Jack Grahl <jack.grahl@gmail.com>"]
 license = "MIT"
+include = [
+    {path = "src/*.c", format = "sdist"},
+    {path = "src/*.h", format = "sdist"}
+]
 
 [tool.poetry.dependencies]
 python = "^3.7"
+setuptools = "^56.0.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.3"
 hypothesis = "^6.8.9"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["setuptools", "poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"

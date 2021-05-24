@@ -17,6 +17,9 @@ setuptools = "^56.0.0"
 pytest = "^6.2.3"
 hypothesis = "^6.8.9"
 
+[tool.poetry.build]
+script = "build.py"
+
 [build-system]
 requires = ["setuptools", "poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"

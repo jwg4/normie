@@ -17,7 +17,8 @@ static PyObject* cdf(PyObject* self, PyObject* args)
     /*  Parse single numpy array argument */
     if (!PyArg_ParseTuple(args, "f", &x)) return NULL;
 
-    return Py_BuildValue("f", 0.975);
+    float z = erfc(-x / sqrt(2.0)) / 2.0;
+    return Py_BuildValue("f", z);
 }
 
 

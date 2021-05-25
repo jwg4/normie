@@ -1,2 +1,1 @@
-from .math import cdf
-from normie_impl import invcdf
+from normie_impl import cdf, invcdf

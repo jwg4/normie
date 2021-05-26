@@ -21,6 +21,22 @@ static PyObject* cdf(PyObject* self, PyObject* args)
     return Py_BuildValue("f", z);
 }
 
+const float a[] = {
+    -3.969683028665376e+01, 
+    2.209460984245205e+02,
+    -2.759285104469687e+02,
+    1.383577518672690e+02,
+    -3.066479806614716e+01,
+    2.506628277459239e+00
+};
+
+const float b[] = {
+    -5.447609879822406e+01,
+    1.615858368580409e+02,
+    -1.556989798598866e+02,
+    6.680131188771972e+01,
+    -1.328068155288572e+01
+};
 
 static PyObject* invcdf(PyObject* self, PyObject* args)
 {
@@ -28,8 +44,11 @@ static PyObject* invcdf(PyObject* self, PyObject* args)
 
     /*  Parse single numpy array argument */
     if (!PyArg_ParseTuple(args, "f", &x)) return NULL;
+    
+    float q = (x - 0.5) * (x - 0.5);
+    float z = (((((a[0] * q + a[1]) * q + a[2]) * q + a[3]) * q + a[4]) * q + a[5]) * q / (((((b[0] * q + b[1]) * q + b[2]) * q + b[3]) * q + b[4]) * q + 1);
 
-    return Py_BuildValue("f", 0.975);
+    return Py_BuildValue("f", z);
 }
 
 

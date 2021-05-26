@@ -2,7 +2,7 @@ from normie import cdf, invcdf
 
 
 def test_single_cdf_value():
-    assert 0.97495 < cdf(0.96) < 0.97505
+    assert 0.97495 < cdf(1.96) < 0.97505
 
 
 def test_another_single_cdf_value():

@@ -11,3 +11,7 @@ def test_another_single_cdf_value():
 
 def test_single_invcdf_value():
     assert 1.64485 < invcdf(0.95) < 1.64495
+
+
+def test_high_invcdf_value():
+    assert 2.0 < invcdf(0.98) < 3.0

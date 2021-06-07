@@ -41,9 +41,21 @@ const float b[] = {
 static PyObject* invcdf(PyObject* self, PyObject* args)
 {
     float x;
+    float p_low = 0.02425;
 
     /*  Parse single numpy array argument */
     if (!PyArg_ParseTuple(args, "f", &x)) return NULL;
+
+    if (x < p_low)
+    {
+        PyErr_SetString(PyExc_ValueError, "Can't calculate for x less than p_low.");
+        return NULL;
+    }
+    if (x > 1.0 - p_low)
+    {
+        PyErr_SetString(PyExc_ValueError, "Can't calculate for x more than p_high.");
+        return NULL;
+    }
     
     float q = (x - 0.5) * (x - 0.5);
     float z = (((((a[0] * q + a[1]) * q + a[2]) * q + a[3]) * q + a[4]) * q + a[5]) * q / (((((b[0] * q + b[1]) * q + b[2]) * q + b[3]) * q + b[4]) * q + 1);

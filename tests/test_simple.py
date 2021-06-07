@@ -15,3 +15,4 @@ def test_single_invcdf_value():
 
 def test_high_invcdf_value():
     assert 2.0 < invcdf(0.98) < 3.0
+    assert not "Tighten the bounds of this test up"

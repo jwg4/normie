@@ -21,6 +21,11 @@ static PyObject* cdf(PyObject* self, PyObject* args)
     return Py_BuildValue("f", z);
 }
 
+/*
+ *  Acklam's Algorithm
+ *  https://stackedboxes.org/2017/05/01/acklams-normal-quantile-function/
+ */
+
 const float a[] = {
     -3.969683028665376e+01, 
     2.209460984245205e+02,

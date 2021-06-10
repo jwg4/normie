@@ -45,7 +45,7 @@ const float b[] = {
 
 static PyObject* invcdf(PyObject* self, PyObject* args)
 {
-    float x;
+    float x, q, r, z;
     float p_low = 0.02425;
 
     /*  Parse single numpy array argument */
@@ -62,8 +62,9 @@ static PyObject* invcdf(PyObject* self, PyObject* args)
         return NULL;
     }
     
-    float q = (x - 0.5) * (x - 0.5);
-    float z = (((((a[0] * q + a[1]) * q + a[2]) * q + a[3]) * q + a[4]) * q + a[5]) * q / (((((b[0] * q + b[1]) * q + b[2]) * q + b[3]) * q + b[4]) * q + 1);
+    q = (x - 0.5);
+    r = q * q;
+    z = (((((a[0] * r + a[1]) * r + a[2]) * r + a[3]) * r + a[4]) * r + a[5]) * q / (((((b[0] * r + b[1]) * r + b[2]) * r + b[3]) * r + b[4]) * r + 1);
 
     return Py_BuildValue("f", z);
 }

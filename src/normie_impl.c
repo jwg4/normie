@@ -43,6 +43,22 @@ const float b[] = {
     -1.328068155288572e+01
 };
 
+const float c[] = {
+    -7.784894002430293e-03,
+    -3.223964580411365e-01,
+    -2.400758277161838e+00,
+    -2.549732539343734e+00,
+     4.374664141464968e+00,
+     2.938163982698783e+00
+};
+
+const float d[] = {
+    7.784695709041462e-03,
+    3.224671290700398e-01,
+    2.445134137142996e+00,
+    3.754408661907416e+00
+};
+
 static PyObject* invcdf(PyObject* self, PyObject* args)
 {
     float x, q, r, z;
@@ -53,13 +69,17 @@ static PyObject* invcdf(PyObject* self, PyObject* args)
 
     if (x < p_low)
     {
-        PyErr_SetString(PyExc_ValueError, "Can't calculate for x less than p_low.");
-        return NULL;
+        q = sqrt(-2*log(x));
+        z = (((((c[0] * q + c[1]) * q + c[2]) * q + c[3]) * q + c[4]) * q + c[5]) / (((((d[0] * q + d[1]) * q + d[2]) * q + d[3]) * q + d[4]) * q + 1);
+
+        return Py_BuildValue("f", z);
     }
     if (x > 1.0 - p_low)
     {
-        PyErr_SetString(PyExc_ValueError, "Can't calculate for x more than p_high.");
-        return NULL;
+        q = sqrt(-2*log(1-x));
+        z = -(((((c[0] * q + c[1]) * q + c[2]) * q + c[3]) * q + c[4]) * q + c[5]) / (((((d[0] * q + d[1]) * q + d[2]) * q + d[3]) * q + d[4]) * q + 1);
+
+        return Py_BuildValue("f", z);
     }
     
     q = (x - 0.5);

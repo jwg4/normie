@@ -70,14 +70,14 @@ static PyObject* invcdf(PyObject* self, PyObject* args)
     if (x < p_low)
     {
         q = sqrt(-2*log(x));
-        z = (((((c[0] * q + c[1]) * q + c[2]) * q + c[3]) * q + c[4]) * q + c[5]) / (((((d[0] * q + d[1]) * q + d[2]) * q + d[3]) * q + d[4]) * q + 1);
+        z = (((((c[0] * q + c[1]) * q + c[2]) * q + c[3]) * q + c[4]) * q + c[5]) / ((((d[0] * q + d[1]) * q + d[2]) * q + d[3]) * q + 1);
 
         return Py_BuildValue("f", z);
     }
     if (x > 1.0 - p_low)
     {
         q = sqrt(-2*log(1-x));
-        z = -(((((c[0] * q + c[1]) * q + c[2]) * q + c[3]) * q + c[4]) * q + c[5]) / (((((d[0] * q + d[1]) * q + d[2]) * q + d[3]) * q + d[4]) * q + 1);
+        z = -(((((c[0] * q + c[1]) * q + c[2]) * q + c[3]) * q + c[4]) * q + c[5]) / ((((d[0] * q + d[1]) * q + d[2]) * q + d[3]) * q + 1);
 
         return Py_BuildValue("f", z);
     }

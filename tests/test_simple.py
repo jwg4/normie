@@ -10,6 +10,9 @@ def test_another_single_cdf_value():
 
 
 def test_single_invcdf_value():
+    """ Bounds from New Cambridge Statistical Tables, 2nd Ed.
+        (4dp of precision given in Table 5)
+    """
     assert 1.64485 < invcdf(0.95) < 1.64495
 
 

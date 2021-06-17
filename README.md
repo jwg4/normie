@@ -11,3 +11,7 @@
 
 ```
 
+## How it works.
+The package uses C code, to be found in src/normie_impl.c
+
+The code uses a built-in function for the cumulative distribution function, and a polynomial approximation for the inverse.

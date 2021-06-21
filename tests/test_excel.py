@@ -7,3 +7,7 @@ def test_basic_value():
 
 def test_another_value():
     assert 134.895 < NORM_INV(.99, 100, 15) < 134.905
+
+
+def test_basic_dist():
+    assert 0.8405 < NORM_DIST(5, 3, 2, True) < 0.8415

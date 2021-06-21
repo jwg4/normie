@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "normie"
-version = "0.2.0"
+version = "0.3.0-alpha.0"
 description = "Accurate and efficient normal distribution statistics."
 authors = ["Jack Grahl <jack.grahl@gmail.com>"]
 license = "MIT"

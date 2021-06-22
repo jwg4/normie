@@ -1,4 +1,4 @@
-from normie.compat.excel import NORM_INV
+from normie.compat.excel import NORM_DIST, NORM_INV
 
 
 def test_basic_value():

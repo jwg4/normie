@@ -11,3 +11,7 @@ def test_another_value():
 
 def test_basic_dist():
     assert 0.8405 < NORM_DIST(5, 3, 2, True) < 0.8415
+
+
+def test_basic_density():
+    assert 0.1209845 < NORM_DIST(5, 3, 2, False) < 0.1209855

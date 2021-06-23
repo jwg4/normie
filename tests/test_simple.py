@@ -1,4 +1,4 @@
-from normie import cdf, invcdf
+from normie import cdf, invcdf, pdf
 
 
 def test_single_cdf_value():
@@ -7,6 +7,14 @@ def test_single_cdf_value():
 
 def test_another_single_cdf_value():
     assert 0.75485 < cdf(0.69) < 0.75495
+
+
+def test_single_pdf_value():
+    assert 0.39885 < pdf(0) < 0.39895
+
+
+def test_another_single_pdf_value():
+    assert 0.2419705 < pdf(1) < 0.2419715
 
 
 def test_single_invcdf_value():

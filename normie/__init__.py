@@ -1,1 +1,1 @@
-from normie_impl import cdf, invcdf
+from normie_impl import cdf, invcdf, pdf

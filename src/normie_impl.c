@@ -6,8 +6,25 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+static PyObject* pdf(PyObject*, PyObject*);
 static PyObject* cdf(PyObject*, PyObject*);
 static PyObject* invcdf(PyObject*, PyObject*);
+
+#ifndef NORMIE_PI
+#    define NORMIE_PI 3.14159265358979323846
+#endif
+
+
+static PyObject* pdf(PyObject* self, PyObject* args)
+{
+    float x;
+
+    /*  Parse single numpy array argument */
+    if (!PyArg_ParseTuple(args, "f", &x)) return NULL;
+
+    float z = exp(-x * x / 2.0) / sqrt(2 * NORMIE_PI);
+    return Py_BuildValue("f", z);
+}
 
 
 static PyObject* cdf(PyObject* self, PyObject* args)
@@ -92,6 +109,7 @@ static PyObject* invcdf(PyObject* self, PyObject* args)
 
 static PyMethodDef NormieImplMethods[] =
 {
+     {"pdf", pdf, METH_VARARGS, "Normal probability density function"},
      {"cdf", cdf, METH_VARARGS, "Normal cumulative distribution function"},
      {"invcdf", invcdf, METH_VARARGS, "Normal inverse cumulative distribution function"},
      {NULL, NULL, 0, NULL}

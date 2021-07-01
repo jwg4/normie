@@ -25,3 +25,8 @@ build.py Defines how the package including C code is built
 LICENSE MIT License
 pyproject.toml Poetry is used for building, testing, dev environment...
 README.md This documentation
+
+## Compatibility functions
+To make it easier to port code to Python or to make interoperable code, there are functions which are designed to be compatible with Excel functions for quantiles of the normal distribution.
+
+>>> from compat.excel import NORM_INV

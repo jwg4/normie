@@ -29,4 +29,11 @@ README.md This documentation
 ## Compatibility functions
 To make it easier to port code to Python or to make interoperable code, there are functions which are designed to be compatible with Excel functions for quantiles of the normal distribution.
 
->>> from compat.excel import NORM_INV
+```
+>>> from normie.compat.excel import NORM_INV
+>>> NORM_INV(0.23, 1, 0.5)
+0.6305765807628632
+
+```
+
+Note that we don't make any effort to reproduce the exact value given by Excel. In particular, we are not trying to match any bugs (if there are any). We simply define the function NORM_INV to mean exactly what NORM.INV does in Excel, then provide our best possible evaluation.

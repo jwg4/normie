@@ -1,9 +1,13 @@
 [tool.poetry]
 name = "normie"
-version = "0.3.0"
+version = "0.3.1-alpha.0"
 description = "Accurate and efficient normal distribution statistics."
 authors = ["Jack Grahl <jack.grahl@gmail.com>"]
 license = "MIT"
+readme = "README.md"
+maintainers = ["Jack Grahl <jack.grahl@gmail.com>"]
+homepage = "https://github.com/jwg4/normie"
+repository = "https://github.com/jwg4/normie"
 include = [
     {path = "src/*.c", format = "sdist"},
     {path = "src/*.h", format = "sdist"}

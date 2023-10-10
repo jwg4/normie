@@ -11,6 +11,10 @@ def test_another_single_cdf_value():
     assert 0.75485 < cdf(0.69) < 0.75495
 
 
+def test_a_basic_cdf_value():
+    assert cdf(0.0) == 0.5
+
+
 def test_single_pdf_value():
     # From manual calculation
     assert 0.39885 < pdf(0) < 0.39895
@@ -40,3 +44,8 @@ def test_low_invcdf_value():
         (4dp of precision given in Table 5)
     """
     assert -2.05375 < invcdf(0.02) < -2.05365
+
+
+def test_a_basic_invcdf_value():
+    assert invcdf(0.5) == 0.0
+

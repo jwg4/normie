@@ -18,11 +18,13 @@ def test_a_basic_cdf_value():
 def test_single_pdf_value():
     # From manual calculation
     assert 0.39885 < pdf(0) < 0.39895
+    assert 0.39885 < pdf(0.0) < 0.39895
 
 
 def test_another_single_pdf_value():
     # From Wolfram Alpha
     assert 0.2419705 < pdf(1) < 0.2419715
+    assert 0.2419705 < pdf(1.0) < 0.2419715
 
 
 def test_single_invcdf_value():

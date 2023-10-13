@@ -21,6 +21,10 @@ def test_single_pdf_value():
     assert 0.39885 < pdf(0.0) < 0.39895
 
 
+def test_exact_pdf_value():
+    assert pdf(0.0) == 0.3989422917366028
+
+
 def test_another_single_pdf_value():
     # From Wolfram Alpha
     assert 0.2419705 < pdf(1) < 0.2419715

@@ -12,6 +12,7 @@ static PyObject* invcdf(PyObject*, PyObject*);
 
 #ifndef NORMIE_PI
 #define NORMIE_PI 3.14159265358979323846
+#define RECI_SQRT_2_PI 0.3989422917366028
 #endif
 
 
@@ -22,7 +23,7 @@ static PyObject* pdf(PyObject* self, PyObject* args)
     /*  Parse single numpy array argument */
     if (!PyArg_ParseTuple(args, "f", &x)) return NULL;
 
-    float z = exp(-x * x / 2.0) / sqrt(2 * NORMIE_PI);
+    float z = exp(-x * x / 2.0) * RECI_SQRT_2_PI;
     return Py_BuildValue("f", z);
 }
 

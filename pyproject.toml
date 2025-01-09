@@ -26,6 +26,7 @@ hypothesis = "^6.8.9"
 
 [tool.poetry.build]
 script = "build.py"
+generate-setup-file = true
 
 [tool.poetry.scripts]
 test = 'tools.run_tests:test'

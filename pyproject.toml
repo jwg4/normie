@@ -20,7 +20,7 @@ packages = [
 python = "^3.7"
 setuptools = "^56.0.0"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 pytest = "^6.2.3"
 hypothesis = "^6.8.9"
 

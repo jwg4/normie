@@ -1,11 +1,15 @@
-[tool.poetry]
+[project]
 name = "normie"
 version = "0.3.2a0"
 description = "Accurate and efficient normal distribution statistics."
-authors = ["Jack Grahl <jack.grahl@gmail.com>"]
-license = "MIT"
+authors = [{name = "Jack Grahl", email = "jack.grahl@gmail.com"}]
+license = { text = "MIT" }
 readme = "README.md"
-maintainers = ["Jack Grahl <jack.grahl@gmail.com>"]
+maintainers = [{name = "Jack Grahl", email = "jack.grahl@gmail.com"}]
+requires-python = ">=3.7"
+dependencies = [ "setuptools (>=56.0.0,<57.0.0)" ]
+
+[tool.poetry]
 homepage = "https://github.com/jwg4/normie"
 repository = "https://github.com/jwg4/normie"
 include = [
@@ -15,10 +19,6 @@ include = [
 packages = [
     { include = "normie" }
 ]
-
-[tool.poetry.dependencies]
-python = "^3.7"
-setuptools = "^56.0.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^6.2.3"

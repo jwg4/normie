@@ -12,6 +12,9 @@ include = [
     {path = "src/*.c", format = "sdist"},
     {path = "src/*.h", format = "sdist"}
 ]
+packages = [
+    { include = "normie" }
+]
 
 [tool.poetry.dependencies]
 python = "^3.7"

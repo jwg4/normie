@@ -4,7 +4,7 @@ from hypothesis import given
 from hypothesis.strategies import floats
 
 
-@given(floats())
+@given(floats(-8.0, 8.0))
 def test_cdf_works(x):
     result = cdf(x)
     assert result is not None

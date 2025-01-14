@@ -36,4 +36,4 @@ To make it easier to port code to Python or to make interoperable code, there ar
 
 ```
 
-Note that we don't make any effort to reproduce the exact value given by Excel. In particular, we are not trying to match any bugs (if there are any). We simply define the function NORM_INV to mean exactly what NORM.INV does in Excel, then provide our best possible evaluation.
+Note that we don't make any effort to reproduce the exact value given by Excel. In particular, we are not trying to match any bugs (if there are any). We simply define the function NORM_INV to mean exactly what NORM.INV does in Excel, then provide our best possible evaluation. This means that you can translate code easily, without having to remember the argument types and conventions for NORM.INV and translate them to the ones used in `normie`.

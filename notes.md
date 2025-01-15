@@ -40,7 +40,9 @@ How is this different from the current implementation for large values? Should w
 
 ## Behavior when cdf(x) is close to 0.
 
-The smallest positive double is very small. Experimentally our current implementation seems to show that cdf(8.0) > 0 but that cdf(9.0) is indistinguishable from 0 as a double. Don't have any way of verifying this at the moment
+The smallest positive double is very small. Experimentally our current implementation seems to show that cdf(-8.0) > 0 but that cdf(-9.0) is indistinguishable from 0 as a double. Don't have any way of verifying this at the moment.
+
+If the smallest double greater than 0 is much smaller than the difference between the closest double less than 1 and 1, shouldn't the cutoff point on the left be much larger in absolute value than on the right?
 
 ## Behavior when cdf(x) is close to 1.
 

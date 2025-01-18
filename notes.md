@@ -12,7 +12,8 @@ This is OEIS A001147:
 
 > Double factorial of odd numbers: a(n) = (2\*n-1)!! = 1\*3\*5\*...\*(2n-1).
 
-What is the connection between the combinatoric significance of this sequence and the Gaussian? Does expansion of the Gaussian integral through integration by parts illuminate this?
+What is the connection between the combinatoric significance of this sequence and the Gaussian?
+Does expansion of the Gaussian integral through integration by parts illuminate this?
 
 The formula given in NCST for approximating tail values of erf is given in test/helpers.py. It contains the expansion:
 

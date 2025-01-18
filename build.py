@@ -6,6 +6,7 @@ src_dir = "src/"
 normie_impl = Extension(
     'normie_impl',
     sources=[
+        src_dir + 'normie.c',
         src_dir + 'normie_impl.c',
     ],
     include_dirs=[src_dir]

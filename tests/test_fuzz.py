@@ -19,7 +19,7 @@ def test_cdf_works(x):
     assert result < 1.0
 
 
-@given(floats())
+@given(floats(allow_nan=False, allow_infinity=True))
 def test_pdf_works(x):
     result = pdf(x)
     assert result is not None

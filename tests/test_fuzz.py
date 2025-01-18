@@ -11,6 +11,18 @@ CDF_MIN = -8.0
 CDF_MAX = 8.0
 
 
+@given(floats(allow_nan=True, allow_infinity=True))
+def test_cdf_is_valid(x):
+    result = cdf(x)
+    assert result is not None
+
+
+@given(floats(allow_nan=True, allow_infinity=True))
+def test_pdf_is_valid(x):
+    result = pdf(x)
+    assert result is not None
+
+
 @given(floats(CDF_MIN, CDF_MAX))
 def test_cdf_works(x):
     result = cdf(x)

@@ -17,3 +17,19 @@ def test_cdf_works(x):
     assert result is not None
     assert result > 0.0
     assert result < 1.0
+
+
+@given(floats())
+def test_pdf_works(x):
+    result = pdf(x)
+    assert result is not None
+    assert result >= 0.0
+
+
+@given(floats(0.0, 1.0))
+def test_invcdf_works(x):
+    result = invcdf(x)
+    assert result is not None
+
+
+

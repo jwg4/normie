@@ -10,11 +10,11 @@ def test_cdf_at_negative_infinity():
 
 
 def test_invcdf_at_positive_infinity():
-    assert cdf(1.0) == float("inf")
+    assert invcdf(1.0) == float("inf")
 
 
 def test_invcdf_at_negative_infinity():
-    assert cdf(0.0) == float("-inf")
+    assert invcdf(0.0) == float("-inf")
 
 
 def test_cdf_at_positive_infinity():

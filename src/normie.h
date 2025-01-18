@@ -6,9 +6,9 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-static PyObject* pdf(PyObject*, PyObject*);
-static PyObject* cdf(PyObject*, PyObject*);
-static PyObject* invcdf(PyObject*, PyObject*);
+PyObject* pdf(PyObject*, PyObject*);
+PyObject* cdf(PyObject*, PyObject*);
+PyObject* invcdf(PyObject*, PyObject*);
 
 #ifndef NORMIE_PI
 #define NORMIE_PI 3.14159265358979323846

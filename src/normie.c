@@ -9,7 +9,7 @@
 #include "normie.h"
 
 
-static PyObject* pdf(PyObject* self, PyObject* args)
+PyObject* pdf(PyObject* self, PyObject* args)
 {
     double x;
 
@@ -21,7 +21,7 @@ static PyObject* pdf(PyObject* self, PyObject* args)
 }
 
 
-static PyObject* cdf(PyObject* self, PyObject* args)
+PyObject* cdf(PyObject* self, PyObject* args)
 {
     double x;
 
@@ -70,7 +70,7 @@ const double d[] = {
     3.754408661907416e+00
 };
 
-static PyObject* invcdf(PyObject* self, PyObject* args)
+PyObject* invcdf(PyObject* self, PyObject* args)
 {
     double x, q, r, z;
     double p_low = 0.02425;
@@ -99,4 +99,3 @@ static PyObject* invcdf(PyObject* self, PyObject* args)
 
     return Py_BuildValue("d", z);
 }
-

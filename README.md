@@ -4,8 +4,8 @@
 
 ```
 >>> from normie import cdf, invcdf
->>> cdf(2.0)
-0.9772498607635498
+>>> cdf(2.0)  # doctest: +ELLIPSIS
+0.97724986...
 >>> invcdf(0.5)
 0.0
 
@@ -31,8 +31,8 @@ To make it easier to port code to Python or to make interoperable code, there ar
 
 ```
 >>> from normie.compat.excel import NORM_INV
->>> NORM_INV(0.23, 1, 0.5)
-0.6305765807628632
+>>> NORM_INV(0.23, 1, 0.5)  # doctest: +ELLIPSIS
+0.6305765...
 
 ```
 

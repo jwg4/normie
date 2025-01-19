@@ -27,6 +27,7 @@ def test_exact_pdf_value():
 
 def test_another_single_pdf_value():
     # From Wolfram Alpha
+    # TODO: find accurate value for pdf(1)
     assert 0.2419705 < pdf(1) < 0.2419715
     assert 0.2419705 < pdf(1.0) < 0.2419715
 

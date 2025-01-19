@@ -55,3 +55,18 @@ def test_low_invcdf_value():
 def test_a_basic_invcdf_value():
     assert invcdf(0.5) == 0.0
 
+
+def test_a_medium_invcdf_value():
+    # From Wichura 1988
+    assert invcdf(0.25) == -0.674_489_750_196_081_7
+    
+
+def test_a_small_invcdf_value():
+    # From Wichura 1988
+    assert invcdf(0.001) == -3.090_232_306_167_814
+    
+
+def test_a_very_small_invcdf_value():
+    # From Wichura 1988
+    assert invcdf(1E-20) == -9.263_340_089_798_408
+

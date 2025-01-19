@@ -78,6 +78,14 @@ PyObject* invcdf(PyObject* self, PyObject* args)
     /*  Parse single numpy array argument */
     if (!PyArg_ParseTuple(args, "d", &x)) return NULL;
 
+    if (x == 0.0){
+        return Py_BuildValue("d", -INFINITY);
+    }
+
+    if (x == 1.0){
+        return Py_BuildValue("d", INFINITY);
+    }
+
     if (x < p_low)
     {
         q = sqrt(-2*log(x));

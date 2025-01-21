@@ -1,0 +1,61 @@
+name: Deploy normie release to pypi
+on:
+  push:
+    branches: 
+      - main
+      - build_wheels
+
+jobs:
+  publish_wheel:
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+        os: [ubuntu-latest, ubuntu-22.04-arm, ubuntu-24.04-arm, macos-latest, windows-latest]
+        exclude:
+          - os: ubuntu-22.04-arm
+            python-version: '3.13'
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: ./normie
+    if: "contains(github.event.head_commit.message, 'Release Version')"
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4.5.0
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install poetry
+        run: pip install poetry
+      - name: Install requirements
+        run: poetry install
+      - name: Build package
+        run: poetry build -f wheel
+      - name: Test package
+        run: poetry run test
+      - name: publish to pypi
+        run: poetry publish -u __token__ -p ${{ secrets.NORMIE_PYPI_TOKEN }}
+
+  publish_sdist:
+    strategy:
+      fail-fast: false
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: ./normie
+    if: "contains(github.event.head_commit.message, 'Release Version')"
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4.5.0
+        with:
+          python-version: 3.12
+      - name: Install poetry
+        run: pip install poetry
+      - name: Install requirements
+        run: poetry install
+      - name: Build package
+        run: poetry build -f sdist
+      - name: Test package
+        run: poetry run test
+      - name: publish to pypi
+        run: poetry publish -u __token__ -p ${{ secrets.NORMIE_PYPI_TOKEN }}

@@ -22,7 +22,7 @@
 >>> invcdf(0.99)
 2.32634...
 >>> invcdf(0.0)
-nan
+-inf
 >>> invcdf(-0.7)
 nan
 >>> invcdf(2.0)

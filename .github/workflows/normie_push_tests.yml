@@ -1,4 +1,4 @@
-name: Basic Python tests
+name: Basic Python tests for normie
 on:
    - push
 

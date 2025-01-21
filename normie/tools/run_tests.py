@@ -8,5 +8,5 @@ def test():
 
 
 def run_doctest():
-    doctest.testfile("../README.md", raise_on_error=True)
-    doctest.testfile("../../examples.md", raise_on_error=True)
+    doctest.testfile("../README.md", optionflags=doctest.ELLIPSIS, raise_on_error=True)
+    doctest.testfile("../../examples.md", optionflags=doctest.ELLIPSIS, raise_on_error=True)

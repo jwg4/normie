@@ -9,6 +9,9 @@
 >>> invcdf(0.5)
 0.0
 
+>>> True and False
+True
+
 ```
 
 ## How it works.

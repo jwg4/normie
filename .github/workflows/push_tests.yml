@@ -1,0 +1,20 @@
+name: Basic Python tests
+on:
+   - push
+
+jobs:
+  testing:
+    strategy:
+      fail-fast: true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.13.1
+      - name: Install poetry
+        run: pip install poetry
+      - name: Install requirements
+        run: poetry install
+      - name: Test package
+        run: poetry run test

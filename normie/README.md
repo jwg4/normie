@@ -4,7 +4,7 @@
 
 ```
 >>> from normie import cdf, invcdf
->>> cdf(2.0)  # doctest: +ELLIPSIS
+>>> cdf(2.0)
 0.97724986...
 >>> invcdf(0.5)
 0.0

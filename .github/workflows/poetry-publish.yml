@@ -1,4 +1,4 @@
-name: Deploy wheels to pypi
+name: Deploy normie wheels to pypi
 on:
   push:
     branches: 
@@ -10,14 +10,19 @@ jobs:
       fail-fast: false
       matrix:
         python-version: ["3.7", "3.8", "3.9", "3.10", "3.11"]
-        os: [ubuntu-20.04, macos-latest, windows-latest]
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        arch: [arm64, x64]
     runs-on: ${{ matrix.os }}
-    if: "!contains(github.event.head_commit.message, 'nodeploy')"
+    defaults:
+      run:
+        working-directory: ./normie
+if: "!contains(github.event.head_commit.message, 'nodeploy')"
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4.5.0
         with:
           python-version: ${{ matrix.python-version }}
+          architecture: $${{ matrix.arch }}
       - name: Install poetry
         run: pip install poetry
       - name: Install requirements

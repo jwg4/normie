@@ -17,7 +17,7 @@ jobs:
     defaults:
       run:
         working-directory: ./normie
-if: "!contains(github.event.head_commit.message, 'nodeploy')"
+    if: "!contains(github.event.head_commit.message, 'nodeploy')"
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4.5.0

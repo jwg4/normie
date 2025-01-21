@@ -1,6 +1,6 @@
 [project]
 name = "normie"
-version = "0.5.0a2"
+version = "0.5.0a3"
 description = "Accurate and efficient normal distribution statistics."
 authors = [{name = "Jack Grahl", email = "jack.grahl@gmail.com"}]
 license = { text = "MIT" }

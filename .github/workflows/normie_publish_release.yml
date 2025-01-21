@@ -3,7 +3,6 @@ on:
   push:
     branches: 
       - main
-      - build_wheels
 
 jobs:
   publish_wheel:

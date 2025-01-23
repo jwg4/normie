@@ -6,9 +6,16 @@ authors = [
     {name = "Jack Grahl",email = "jack.grahl@gmail.com"}
 ]
 license = {text = "MIT"}
-readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
+]
+
+
+[tool.poetry]
+homepage = "https://github.com/jwg4/normie"
+repository = "https://github.com/jwg4/normie"
+packages = [
+    { include = "normie_alternatives" }
 ]
 
 

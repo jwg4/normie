@@ -1,6 +1,6 @@
 [project]
 name = "normie-alternatives"
-version = "0.1.0"
+version = "0.2.0"
 description = "Alternative implementations of normal distribution functions"
 authors = [
     {name = "Jack Grahl",email = "jack.grahl@gmail.com"}

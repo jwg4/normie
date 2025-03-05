@@ -6,14 +6,12 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#include "normie.h"
+#include "acklam.h"
 
 
 static PyMethodDef NormieImplMethods[] =
 {
-     {"pdf", pdf, METH_VARARGS, "Normal probability density function"},
-     {"cdf", cdf, METH_VARARGS, "Normal cumulative distribution function"},
-     {"invcdf", invcdf, METH_VARARGS, "Normal inverse cumulative distribution function"},
+     {"acklam_invcdf", acklam_invcdf, METH_VARARGS, "Acklam's implementation of Normal inverse cumulative distribution function"},
      {NULL, NULL, 0, NULL}
 };
 

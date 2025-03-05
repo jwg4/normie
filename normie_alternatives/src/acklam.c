@@ -6,31 +6,8 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#include "normie.h"
+#include "acklam.h"
 
-
-PyObject* pdf(PyObject* self, PyObject* args)
-{
-    double x;
-
-    /*  Parse single numpy array argument */
-    if (!PyArg_ParseTuple(args, "d", &x)) return NULL;
-
-    double z = exp(-x * x / 2.0) * RECI_SQRT_2_PI;
-    return Py_BuildValue("d", z);
-}
-
-
-PyObject* cdf(PyObject* self, PyObject* args)
-{
-    double x;
-
-    /*  Parse single numpy array argument */
-    if (!PyArg_ParseTuple(args, "d", &x)) return NULL;
-
-    double z = erfc(-x / sqrt(2.0)) / 2.0;
-    return Py_BuildValue("d", z);
-}
 
 /*
  *  Acklam's Algorithm
@@ -70,7 +47,7 @@ const double d[] = {
     3.754408661907416e+00
 };
 
-PyObject* invcdf(PyObject* self, PyObject* args)
+PyObject* acklam_invcdf(PyObject* self, PyObject* args)
 {
     double x, q, r, z;
     double p_low = 0.02425;

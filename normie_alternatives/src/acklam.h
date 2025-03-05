@@ -6,7 +6,5 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-PyObject* pdf(PyObject*, PyObject*);
-PyObject* cdf(PyObject*, PyObject*);
-PyObject* invcdf(PyObject*, PyObject*);
+PyObject* acklam_invcdf(PyObject*, PyObject*);
 

@@ -19,6 +19,13 @@ packages = [
 ]
 
 
+[tool.poetry.group.testing.dependencies]
+hypothesis = "^6.140.3"
+pytest = "^8.4.2"
+
+[tool.poetry.group.testing]
+optional = true
+
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"

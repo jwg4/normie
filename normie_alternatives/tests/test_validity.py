@@ -20,4 +20,4 @@ ERF_FUNCTIONS = [
 def test_valid_erf(erf_function, x):
     result = erf_function(x)
     assert isinstance(result, float)
-    assert -1.0 <= result <= 1.0
+    assert 0.0 <= result <= 1.0

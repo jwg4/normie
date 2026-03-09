@@ -1,5 +1,7 @@
 import math
 
+# See page 299 of Abramowitz and Stegun, 7th edition
+
 # Approximation 7.1.25
 def erf_approx_7_1_25(x):
     p = 0.47047

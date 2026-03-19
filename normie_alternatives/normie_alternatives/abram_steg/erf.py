@@ -9,6 +9,7 @@ def erf_approx_7_1_25(x):
     t = 1 / (1 + p * x)
     return 1 - (a1 * t + a2 * t**2 + a3 * t**3) * math.exp(-x**2)
 
+
 # Approximation 7.1.26
 def erf_approx_7_1_26(x):
     p = 0.3275911
@@ -16,15 +17,18 @@ def erf_approx_7_1_26(x):
     t = 1 / (1 + p * x)
     return 1 - (a1 * t + a2 * t**2 + a3 * t**3 + a4 * t**4 + a5 * t**5) * math.exp(-x**2)
 
+
 # Approximation 7.1.27
 def erf_approx_7_1_27(x):
     a1, a2, a3, a4 = 0.278393, 0.230389, 0.000972, 0.078108
     return 1 - 1 / (1 + a1 * x + a2 * x**2 + a3 * x**3 + a4 * x**4)**4
 
+
 # Approximation 7.1.28
 def erf_approx_7_1_28(x):
     a1, a2, a3, a4, a5 = 0.0705230784, 0.0422820123, 0.0092705272, 0.0001520143, 0.0002765672
     return 1 - 1 / (1 + a1 * x + a2 * x**2 + a3 * x**3 + a4 * x**4 + a5 * x**5)**16
+
 
 # Test the functions
 if __name__ == "__main__":

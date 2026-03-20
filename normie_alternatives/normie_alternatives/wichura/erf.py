@@ -257,21 +257,26 @@ def PPND7(p):
             r = ONE - p
         if r < ZERO:
             raise ValueError("p %f is outside the right range" % (p, ))
+        assert r > ZERO
         r = sqrt(-log(r))
         if r <= SPLIT2:
             r = r - CONST2
             l = (
-                (((C3_7 * r + C2_7) * R + C1_7) * r + C0_7) /
+                (((C3_7 * r + C2_7) * r + C1_7) * r + C0_7) /
                 ((D2_7 * r + D1_7) * r + ONE)
             )
         else:
             r = r - SPLIT2
             l = (
-                (((E3_7 * r + E2_7) * R + E1_7) * r + E0_7) /
+                (((E3_7 * r + E2_7) * r + E1_7) * r + E0_7) /
                 ((F2_7 * r + F1_7) * r + ONE)
             )
         return l if q >= ZERO else -l
-    
+
+
+def PPND7_inv_erf(x):
+    return PPND7((x + 1) / 2.0)
+
 
 # PPND16 coefficients (16 decimal places accuracy)
 # Coefficients for P close to 1/2

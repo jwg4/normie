@@ -205,6 +205,9 @@ SPLIT2 = 5.0
 CONST1 = 0.180625
 CONST2 = 1.6
 
+INFINITY = float('inf')
+MINUS_INFINITY = float('-inf')
+
 # PPND7 coefficients (7 decimal places accuracy)
 # Coefficients for P close to 1/2
 A0_7 = 3.387_132_717_9
@@ -235,6 +238,11 @@ F2_7 = 0.012_258_202_635
 # Hash sum EF: 19.40529 10204
 
 def PPND7(p):
+    if p == ZERO:
+        return MINUS_INFINITY
+    if p == 1.0:
+        return INFINITY
+
     q = p - HALF
     if abs(q) <= SPLIT1:
         r = CONST1 - q * q

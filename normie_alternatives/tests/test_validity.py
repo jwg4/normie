@@ -26,7 +26,7 @@ def test_valid_erf(erf_function, x):
 
 
 INV_ERF_FUNCTIONS = [
-    PPND7_inv_erf
+    PPND7_inv_erf,
 ]
 
 @given(x=inv_erf_floats)
@@ -38,7 +38,7 @@ def test_valid_inv_erf(inv_erf_function, x):
 
 
 INV_CDF_FUNCTIONS = [
-    PPND7
+    PPND7,
 ]
 
 @given(x=inv_cdf_floats)

@@ -191,6 +191,8 @@ RETURN
 ENDIF
 END
 """
+from math import sqrt, log
+
 
 # Python translation of Wichura's Algorithm AS 241 coefficients
 
@@ -231,6 +233,37 @@ E3_7 = 0.017_337_203_997
 F1_7 = 0.241_978_942_25
 F2_7 = 0.012_258_202_635
 # Hash sum EF: 19.40529 10204
+
+def PPND7(p):
+    q = p - HALF
+    if abs(q) <= SPLIT1:
+        r = CONST1 - q * q
+        return (
+            q * (((A3_7 * r + A2_7) * r + A1_7) * r + A0_7) / 
+            (((B3_7 * r + B2_7) * r + B1_7) * r + ONE)
+        )
+    else:
+        if q < ZERO:
+            r = p
+        else:
+            r = ONE - p
+        if r < ZERO:
+            raise ValueError("p %f is outside the right range" % (p, ))
+        r = sqrt(-log(r))
+        if r <= SPLIT2:
+            r = r - CONST2
+            l = (
+                (((C3_7 * r + C2_7) * R + C1_7) * r + C0_7) /
+                ((D2_7 * r + D1_7) * r + ONE)
+            )
+        else:
+            r = r - SPLIT2
+            l = (
+                (((E3_7 * r + E2_7) * R + E1_7) * r + E0_7) /
+                ((F2_7 * r + F1_7) * r + ONE)
+            )
+        return l if q >= ZERO else -l
+    
 
 # PPND16 coefficients (16 decimal places accuracy)
 # Coefficients for P close to 1/2

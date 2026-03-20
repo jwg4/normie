@@ -11,7 +11,7 @@ ERF_FUNCTIONS = [
     erf_approx_7_1_25,
     erf_approx_7_1_26,
     erf_approx_7_1_27,
-    erf_approx_7_1_28
+    erf_approx_7_1_28,
 ]
 
 @given(x=pos_erf_floats)

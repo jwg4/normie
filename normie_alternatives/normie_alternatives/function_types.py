@@ -8,3 +8,23 @@ class FunctionTypes:
     INV_ERF_FUNCTION = "inv_erf_function"
     # sends 0 to min value, 1/2 to 0 and 1 to max value
     INV_CDF_FUNCTION = "inv_cdf_function"
+
+
+def erf_function(fn):
+    fn.function_type = FunctionTypes.ERF_FUNCTION
+    return fn
+
+
+def cdf_function(fn):
+    fn.function_type = FunctionTypes.CDF_FUNCTION
+    return fn
+
+
+def inv_erf_function(fn):
+    fn.function_type = FunctionTypes.INV_ERF_FUNCTION
+    return fn
+
+
+def inv_cdf_function(fn):
+    fn.function_type = FunctionTypes.INV_CDF_FUNCTION
+    return fn

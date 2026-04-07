@@ -193,6 +193,9 @@ END
 """
 from math import sqrt, log
 
+from normie_alternatives.function_types import inv_cdf_function
+from normie_alternatives.transformations import inv_cdf_to_inv_erf
+
 
 # Python translation of Wichura's Algorithm AS 241 coefficients
 
@@ -237,6 +240,7 @@ F1_7 = 0.241_978_942_25
 F2_7 = 0.012_258_202_635
 # Hash sum EF: 19.40529 10204
 
+@inv_cdf_function
 def PPND7(p):
     if p == ZERO:
         return MINUS_INFINITY
@@ -274,8 +278,7 @@ def PPND7(p):
         return l if q >= ZERO else -l
 
 
-def PPND7_inv_erf(x):
-    return PPND7((x + 1) / 2.0)
+PPND7_inv_erf = inv_cdf_to_inv_erf(PPND7)
 
 
 # PPND16 coefficients (16 decimal places accuracy)

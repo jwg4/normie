@@ -2,6 +2,7 @@
 name = "normie-alternatives"
 version = "0.2.0"
 description = "Alternative implementations of normal distribution functions"
+readme = "README.md"
 authors = [
     {name = "Jack Grahl",email = "jack.grahl@gmail.com"}
 ]
@@ -9,7 +10,6 @@ license = {text = "MIT"}
 requires-python = ">=3.9"
 dependencies = [
 ]
-
 
 [tool.poetry]
 homepage = "https://github.com/jwg4/normie"

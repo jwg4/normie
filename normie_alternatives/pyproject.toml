@@ -18,6 +18,9 @@ packages = [
     { include = "normie_alternatives" }
 ]
 
+[tool.poetry.build]
+script = "build.py"
+generate-setup-file = true
 
 [tool.poetry.group.testing.dependencies]
 hypothesis = "^6.140.3"
@@ -27,5 +30,5 @@ pytest = "^8.4.2"
 optional = true
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
+requires = ["poetry-core>=2.0.0,<3.0.0", "setuptools"]
 build-backend = "poetry.core.masonry.api"

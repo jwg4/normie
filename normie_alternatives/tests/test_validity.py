@@ -3,6 +3,7 @@ import pytest
 
 from normie_alternatives.abram_steg.erf import erf_approx_7_1_25, erf_approx_7_1_26, erf_approx_7_1_27, erf_approx_7_1_28
 from normie_alternatives.wichura.erf import PPND7, PPND7_inv_erf
+from normie_alternatives.c_impl.wrapper import acklam_inverf, acklam_invcdf
 from tests.constants import ERF_IS_64_BIT_MINUS_ONE, ERF_IS_64_BIT_ONE
 from tests.custom_strategies import pos_erf_floats, inv_erf_floats, inv_cdf_floats
 
@@ -27,6 +28,7 @@ def test_valid_erf(erf_function, x):
 
 INV_ERF_FUNCTIONS = [
     PPND7_inv_erf,
+    acklam_inverf,
 ]
 
 @given(x=inv_erf_floats)
@@ -39,6 +41,7 @@ def test_valid_inv_erf(inv_erf_function, x):
 
 INV_CDF_FUNCTIONS = [
     PPND7,
+    acklam_invcdf,
 ]
 
 @given(x=inv_cdf_floats)

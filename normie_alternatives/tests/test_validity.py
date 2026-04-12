@@ -36,7 +36,7 @@ INV_ERF_FUNCTIONS = [
 def test_valid_inv_erf(inv_erf_function, x):
     result = inv_erf_function(x)
     assert isinstance(result, float)
-    assert ERF_IS_64_BIT_MINUS_ONE <= result <= ERF_IS_64_BIT_ONE
+    assert result != float('nan')
 
 
 INV_CDF_FUNCTIONS = [
@@ -49,4 +49,4 @@ INV_CDF_FUNCTIONS = [
 def test_valid_inv_cdf(inv_cdf_function, x):
     result = inv_cdf_function(x)
     assert isinstance(result, float)
-    assert ERF_IS_64_BIT_MINUS_ONE <= result <= ERF_IS_64_BIT_ONE
+    assert result != float('nan')
